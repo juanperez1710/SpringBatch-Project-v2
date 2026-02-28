@@ -1,0 +1,11 @@
+idReporte,ubicacion,densidadEnergia,numVictimas
+INC001,Estacion Shibuya,8500,12
+INC002,Escuela Primaria Sugisawa,12000,30
+INC003,Parque Central,150,0
+INC004,Tunel de Roppongi,4500,5
+INC005,Centro Comercial Kyoto,95,0
+INC006,Santuario Abandonado,15000,87
+INC007,Hospital Psiquiatrico,7200,8
+INC008,Callejon Akihabara,300,1
+INC009,Monte Kurama,25000,126
+INC010,Biblioteca Municipal,1200,3
