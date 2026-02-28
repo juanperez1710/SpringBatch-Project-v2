@@ -29,7 +29,7 @@ import javax.sql.DataSource;
 @Configuration
 public class BatchConfig {
 
-    // --- Definición del Job ---
+
     @Bean
     public Job jujutsuJobv3(JobRepository jobRepository, Step step1, Step step2) {
         return new JobBuilder("jujutsuJob", jobRepository)
@@ -38,7 +38,7 @@ public class BatchConfig {
                 .build();
     }
 
-    // --- STEP 1: CSV -> MySQL (Clasificación de Grados) ---
+
     @Bean
     public Step step1(JobRepository jobRepository, PlatformTransactionManager transactionManager, DataSource dataSource) {
         return new StepBuilder("step1-clasificacion", jobRepository)
@@ -49,7 +49,7 @@ public class BatchConfig {
                 .build();
     }
 
-    // --- STEP 2: MySQL -> MongoDB (Asignación de Hechiceros en chunks de 5) ---
+
     @Bean
     public Step step2(JobRepository jobRepository, PlatformTransactionManager transactionManager, DataSource dataSource, MongoTemplate mongoTemplate) {
         return new StepBuilder("step2-asignacion", jobRepository)
@@ -60,7 +60,7 @@ public class BatchConfig {
                 .build();
     }
 
-    // --- Componentes STEP 1 ---
+
 
     @Bean
     public FlatFileItemReader<Clasificacion> csvReader() {
@@ -85,7 +85,7 @@ public class BatchConfig {
                 .build();
     }
 
-    // --- Componentes STEP 2 ---
+
 
     @Bean
     public JdbcCursorItemReader<Clasificacion> sqlReader(DataSource dataSource) {
